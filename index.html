@@ -1,0 +1,126 @@
+<!-- 
+    Apuli, Jhazel John B.
+    IT235
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JhazCode</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Me</a>
+      <a href="certificates.html">Certificates</a>
+    </nav>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="profile-container">
+          <img
+            src="resources/img/profile-pic.jpg"
+            alt="Jhazel's Profile Picture"
+            class="profile-pic"
+          />
+        </div>
+        <div class="hero-text">
+          <h1>JhazCode</h1>
+          <p>Full Stack Developer</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="main-content">
+      <section class="skills-section">
+        <h2>My Skills</h2>
+        <div class="skills">
+          <div class="skill-card">
+            <h3>Frontend Development</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </div>
+          <div class="skill-card">
+            <h3>Backend Development</h3>
+            <p>Java, Python, PHP, SQL, MsSQL</p>
+          </div>
+          <div class="skill-card">
+            <h3>Mobile App Development</h3>
+            <p>Java, Kotlin, Android Studio</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+          <a href="https://github.com/JhazCode/File-Inspector" target="_blank">
+             <h3>File Inspector</h3>
+             <p>
+               A simple and lightweight program built with Java for file
+               analysis.
+             </p>
+            </div>
+          </a>
+            <div class="project-card">
+          <a href="https://github.com/JhazCode/NU-PUP" target="_blank">
+             <h3>NU PUP Fries</h3>
+             <p>
+               A mobile application made for a fries stall business using
+               Android Studio (Kotlin) and Firebase with complete backend
+               (CRUD) features.
+             </p>
+            </div>
+          </a>
+            <div class="project-card">
+          <a href="https://github.com/JhazCode/Bulldogs-WebEx" target="_blank">
+             <h3>Bulldogs WebEx</h3>
+             <p>
+               A basic e-commerce website for the university store with
+               login/register feature.
+             </p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2025 JhazCode. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Theme Toggle Functionality
+      function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+        const currentTheme = body.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+          body.setAttribute("data-theme", "light");
+          themeToggle.textContent = "🌙";
+          localStorage.setItem("theme", "light");
+        } else {
+          body.setAttribute("data-theme", "dark");
+          themeToggle.textContent = "☀️";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      // Load saved theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+
+        body.setAttribute("data-theme", savedTheme);
+        themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>

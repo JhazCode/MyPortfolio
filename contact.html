@@ -1,0 +1,96 @@
+<!-- 
+    Apuli, Jhazel John B.
+    IT235
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - JhazCode</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Me</a>
+      <a href="certificates.html">Certificates</a>
+    </nav>
+
+    <div class="contact-container">
+      <div class="contact-form">
+        <h1>Connect with me</h1>
+        <p style="text-align: center; margin-bottom: 2rem">
+          Through the following platforms:
+        </p>
+
+        <div class="social-links">
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+            class="social-card"
+          >
+            <div class="social-icon">📧</div>
+            <h3>Email</h3>
+            <p>apulijhazeljohnbernardo@gmail.com</p>
+          </a>
+
+          <a
+            href="https://github.com/JhazCode"
+            target="_blank"
+            class="social-card"
+          >
+            <div class="social-icon">💻</div>
+            <h3>GitHub</h3>
+            <p>github.com/JhazCode</p>
+          </a>
+
+          <a
+            href="https://www.facebook.com/jhazeljohnofficial"
+            target="_blank"
+            class="social-card"
+          >
+            <div class="social-icon">📘</div>
+            <h3>Facebook</h3>
+            <p>facebook.com/jhazeljohnofficial</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 JhazCode. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Theme Toggle Functionality
+      function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+        const currentTheme = body.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+          body.setAttribute("data-theme", "light");
+          themeToggle.textContent = "🌙";
+          localStorage.setItem("theme", "light");
+        } else {
+          body.setAttribute("data-theme", "dark");
+          themeToggle.textContent = "☀️";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+
+        body.setAttribute("data-theme", savedTheme);
+        themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!-- 
+    Apuli, Jhazel John B.
+    IT235
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificates - JhazCode</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Me</a>
+      <a href="certificates.html">Certificates</a>
+    </nav>
+
+    <section class="certificates-header">
+      <h1>My Certificates</h1>
+      <p>A collection of certifications in Programming and Development</p>
+    </section>
+
+    <div class="certificates-container">
+      <div class="certificates-grid">
+        <div class="certificate-card">
+          <h2>Web Development Fundamentals</h2>
+          <h3>
+            <br />ZUIT Free Coding Bootcamp: Basic Web Development Workshop
+          </h3>
+          <div class="certificate-details">
+            <p>Issuing Organization: <b>ZUIT</b></p>
+            <p>Date: May 2023</p>
+          </div>
+          <a
+            href="resources\cert\Web Development Workshop (May 13) - Certificate of Participation.pdf"
+            class="view-certificate"
+            >View Certificate</a
+          >
+        </div>
+
+        <div class="certificate-card">
+          <h2>UX Foundations</h2>
+          <h3><br />Basic concepts in designing for multiple devices<br /></h3>
+          <br />
+          <div class="certificate-details">
+            <p>Issuing Organization: <b>LinkedIn Learning</b></p>
+            <p>Date: September 2024</p>
+          </div>
+          <a
+            href="resources\cert\CertificateOfCompletion_UX Foundations Multidevice Design.pdf"
+            class="view-certificate"
+            >View Certificate</a
+          >
+        </div>
+
+        <div class="certificate-card">
+          <h2>Android Development Fundamentals</h2>
+          <h3>
+            <br />
+            Android Development Essential Training: Manage Data with Kotlin
+          </h3>
+          <div class="certificate-details">
+            <p>Issuing Organization: <b>LinkedIn Learning</b></p>
+            <p>Date: October 2024</p>
+          </div>
+          <a
+            href="resources\cert\CertificateOfCompletion_Android Development Essential Training Manage Data with Kotlin.pdf"
+            class="view-certificate"
+            >View Certificate</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 JhazCode. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Theme Toggle Functionality
+      function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+        const currentTheme = body.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+          body.setAttribute("data-theme", "light");
+          themeToggle.textContent = "🌙";
+          localStorage.setItem("theme", "light");
+        } else {
+          body.setAttribute("data-theme", "dark");
+          themeToggle.textContent = "☀️";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+
+      // Load saved theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const body = document.body;
+        const themeToggle = document.querySelector(".theme-toggle-icon");
+
+        body.setAttribute("data-theme", savedTheme);
+        themeToggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>
